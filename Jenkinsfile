@@ -7,7 +7,7 @@ pipeline {
         stage('Build'){
             agent {
                 docker {
-                    image 'node:latest-slim'
+                    image 'node:lts-slim'
                 }
             }
             steps {
