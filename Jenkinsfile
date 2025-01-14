@@ -7,7 +7,7 @@ pipeline {
         stage('Build'){
             agent {
                 docker {
-                    image 'node:lts-slim'
+                    image 'node:lts-buster-slim'
                 }
             }
             steps {
