@@ -27,7 +27,7 @@ pipeline {
                 sh 'docker push  hhm190700/nodejsgoof:0.1'
             }
         }
-        stage('Deploy Docker Image')
+        stage('Deploy Docker Image'){
             agent {
                 docker {
                     image 'kroniak/ssh-client'
@@ -45,5 +45,6 @@ pipeline {
                 }
                 
             }
-        }   
+        }
+    }   
 }
