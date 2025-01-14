@@ -28,7 +28,7 @@ pipeline {
             }
         }
         stage('Deploy Docker Image')
-        agent {
+            agent {
                 docker {
                     image 'kroniak/ssh-client'
                     args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
@@ -46,5 +46,4 @@ pipeline {
                 
             }
         }   
-    }
 }
