@@ -12,13 +12,13 @@ pipeline {
             }
             steps {
                 sh 'npm install'
-            }
+            } 
         }
         stage('Build Docker Image and Push to Docker Registry'){
             agent {
                 docker {
                     image 'docker:dind'
-                    args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'
+                    args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
                 }
             }
             steps {
